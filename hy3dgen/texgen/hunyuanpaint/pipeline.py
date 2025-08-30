@@ -41,7 +41,7 @@ from diffusers.utils import deprecate
 from einops import rearrange
 from transformers import CLIPImageProcessor, CLIPTextModel, CLIPTokenizer, CLIPVisionModelWithProjection
 
-from hy3dgen.texgen.hunyuanpaint.unet.modules import UNet2p5DConditionModel, \
+from .unet.modules import UNet2p5DConditionModel, \
     compute_multi_resolution_mask, compute_multi_resolution_discrete_voxel_indice
 
 def guidance_scale_embedding(w, embedding_dim=512, dtype=torch.float32):
