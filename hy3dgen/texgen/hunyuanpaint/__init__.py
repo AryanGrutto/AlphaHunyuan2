@@ -11,3 +11,6 @@
 # optimizer states), machine-learning model code, inference-enabling code, training-enabling code,
 # fine-tuning enabling code and other elements of the foregoing made publicly available
 # by Tencent in accordance with TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT.
+
+# Package imports
+from .pipeline import *
