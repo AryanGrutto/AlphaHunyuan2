@@ -6,7 +6,7 @@ from PIL import Image
 from hy3dgen.rembg import BackgroundRemover
 from hy3dgen.shapegen import Hunyuan3DDiTFlowMatchingPipeline
 
-image_path = 'assets/test.jpg'
+image_path = './assets/test.jpg'
 image = Image.open(image_path).convert("RGBA")
 if image.mode == 'RGB':
     rembg = BackgroundRemover()
