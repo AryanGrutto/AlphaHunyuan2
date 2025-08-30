@@ -10,7 +10,7 @@ from hy3dgen.shapegen import Hunyuan3DDiTFlowMatchingPipeline
 # Get the absolute path to the assets directory
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
-image_path = os.path.join(project_root, 'assets', 'demo.png')
+image_path = os.path.join(project_root, 'assets', 'demo2.png')
 image = Image.open(image_path).convert("RGBA")
 if image.mode == 'RGB':
     rembg = BackgroundRemover()

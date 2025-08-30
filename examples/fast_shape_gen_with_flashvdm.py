@@ -18,7 +18,9 @@ pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(
 pipeline.enable_flashvdm()
 # pipeline.compile()
 
-image_path = 'assets/demo.png'
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
+image_path = os.path.join(project_root, 'assets', 'demo.png')
 image = Image.open(image_path).convert("RGBA")
 if image.mode == 'RGB':
     rembg = BackgroundRemover()
