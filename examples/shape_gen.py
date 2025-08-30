@@ -1,4 +1,5 @@
 import time
+import os
 
 import torch
 from PIL import Image
@@ -6,7 +7,10 @@ from PIL import Image
 from hy3dgen.rembg import BackgroundRemover
 from hy3dgen.shapegen import Hunyuan3DDiTFlowMatchingPipeline
 
-image_path = '../assets/demo.png'
+# Get the absolute path to the assets directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
+image_path = os.path.join(project_root, 'assets', 'demo.png')
 image = Image.open(image_path).convert("RGBA")
 if image.mode == 'RGB':
     rembg = BackgroundRemover()
