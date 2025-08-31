@@ -20,7 +20,7 @@ print("pipeline_texgen loaded")
 start_time = time.time()
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
-image_path = os.path.join(project_root, 'assets', 'demo2.png')
+image_path = os.path.join(project_root, 'assets', 'demo3.png')
 image = Image.open(image_path).convert("RGBA")
 if image.mode == 'RGB':
     rembg = BackgroundRemover()
@@ -28,7 +28,7 @@ if image.mode == 'RGB':
 
 mesh = pipeline_shapegen(image=image)[0]
 mesh = pipeline_texgen(mesh, image=image)
-mesh.export('demo2.glb')
+mesh.export('demo3.glb')
 
 print("--- %s seconds ---" % (time.time() - start_time))
 print("mesh generated")
