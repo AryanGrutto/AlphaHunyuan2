@@ -11,7 +11,7 @@ print("model_path loaded")
 print(model_path)
 
 
-pipeline_shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(model_path)
+pipeline_shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(model_path, subfolder='hunyuan3d-dit-v2-1')
 print("pipeline_shapegen loaded")
 
 pipeline_texgen = Hunyuan3DPaintPipeline.from_pretrained(model_path, subfolder='hunyuan3d-paintpbr-v2-1')
