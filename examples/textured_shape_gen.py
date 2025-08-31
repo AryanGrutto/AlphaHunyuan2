@@ -12,7 +12,7 @@ print(model_path)
 pipeline_shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(model_path)
 print("pipeline_shapegen loaded")
 
-pipeline_texgen = Hunyuan3DPaintPipeline.from_pretrained(model_path, subfolder='hunyuan3d-paint-v2-0')
+pipeline_texgen = Hunyuan3DPaintPipeline.from_pretrained(model_path, subfolder='hunyuan3d-paint-v2-0-turbo')
 print("pipeline_texgen loaded")
 
 start_time = time.time()
