@@ -1,5 +1,6 @@
 from PIL import Image
 import os
+import time
 
 from hy3dgen.rembg import BackgroundRemover
 from hy3dgen.shapegen import Hunyuan3DDiTFlowMatchingPipeline
@@ -14,6 +15,7 @@ print("pipeline_shapegen loaded")
 pipeline_texgen = Hunyuan3DPaintPipeline.from_pretrained(model_path)
 print("pipeline_texgen loaded")
 
+start_time = time.time()
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
 image_path = os.path.join(project_root, 'assets', 'demo2.png')
@@ -24,4 +26,8 @@ if image.mode == 'RGB':
 
 mesh = pipeline_shapegen(image=image)[0]
 mesh = pipeline_texgen(mesh, image=image)
-mesh.export('demo.glb')
+mesh.export('demo2.glb')
+
+print("--- %s seconds ---" % (time.time() - start_time))
+print("mesh generated")
+print(mesh)
