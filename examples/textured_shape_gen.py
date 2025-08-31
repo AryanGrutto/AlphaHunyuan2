@@ -6,13 +6,15 @@ from hy3dgen.rembg import BackgroundRemover
 from hy3dgen.shapegen import Hunyuan3DDiTFlowMatchingPipeline
 from hy3dgen.texgen import Hunyuan3DPaintPipeline
 
-model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'models', 'Hunyuan3D-2')
+model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'models', 'Hunyuan3D-2.1')
 print("model_path loaded")
 print(model_path)
-pipeline_shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(model_path)
+
+
+pipeline_shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(model_path, device='cuda')
 print("pipeline_shapegen loaded")
 
-pipeline_texgen = Hunyuan3DPaintPipeline.from_pretrained(model_path, subfolder='hunyuan3d-paint-v2-0-turbo')
+pipeline_texgen = Hunyuan3DPaintPipeline.from_pretrained(model_path, subfolder='hunyuan3d-paint-v2-0-turbo', device='cuda')
 print("pipeline_texgen loaded")
 
 start_time = time.time()
